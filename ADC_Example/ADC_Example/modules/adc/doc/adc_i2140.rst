@@ -1,0 +1,62 @@
+======================
+ADC driver
+======================
+
+The Analog-to-Digital Converter (ADC) peripheral is a 12-bit differential and single-ended ADC, with a Programmable Gain Amplifier (PGA), and a 
+conversion rate up to 375 kHz at 12-bit resolution. 
+
+The ADC is connected to an analog input multiplexer for selection between multiple single-ended or differential inputs. 
+
+In single-ended conversions, the ADC measures the voltage between the selected input and 0V (GND). 
+
+In differential conversions, the ADC measures the voltage between two selected inputs. The ADC inputs can be either internal (for example, a voltage reference) or
+external analog input pins.
+
+Operational Modes
+------------------
+* Single mode - Single conversion per trigger, with 8 or 12-bit conversion output
+* Series Accumulation mode - One conversion per trigger, with accumulation of n samples
+* Burst Accumulation mode - A burst with n samples accumulated as fast as possible after a single trigger
+
+Features
+--------
+* 12-Bit Resolution Up to 17 bits with oversampling
+* Conversion Rate Up to 375 kHz at 12-bit Resolution
+* Differential and Single-Ended Conversion
+* Programmable Gain Amplifier (PGA) from 1x to 16x
+* Single and Free-Running Conversions
+* Series and Burst Accumulation Modes
+* Optional Event Triggered Conversion
+* Configurable Window Comparator
+
+Applications
+------------
+* Periodic sampling of Input signals
+* Series and Burst accumulations with scaling
+* Sampling and measurement of a signal. E.g., sinusoidal wave, square wave.
+
+Dependencies
+------------
+* ADC peripheral
+* CLKCTRL/CLK for clock
+* CPUINT/PMIC for Interrupt
+* JTAG/PDI/UPDI for debug
+* PORT for I/O Lines and Connections
+* EVSYS for Events
+
+Note
+----
+* ISR will be generated only when Global Interrupt checkbox and driver_isr Harness checkbox are enabled
+
+Concurrency
+-----------
+N/A
+
+Limitations
+-----------
+N/A
+
+Knows issues and workarounds
+----------------------------
+N/A
+
